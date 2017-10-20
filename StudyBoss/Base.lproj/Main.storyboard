@@ -16,6 +16,15 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvW-6S-Pwv">
+                                <rect key="frame" x="16" y="20" width="101" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -23,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-637"/>
+            <point key="canvasLocation" x="233" y="-321"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -36,29 +45,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="ygi-7z-Ypf" kind="relationship" relationship="viewControllers" id="gaT-22-Grg"/>
                         <segue destination="t9r-8x-0bc" kind="relationship" relationship="viewControllers" id="RQM-Mj-TgW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-610" y="52"/>
-        </scene>
-        <!--New Set-->
-        <scene sceneID="RR3-GG-blv">
-            <objects>
-                <viewController id="ygi-7z-Ypf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5Sb-Tj-HMj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="M1W-jH-mcV"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="New Set" image="Plus" id="X7S-5c-yBb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8cm-WH-8Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="153" y="52"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ka0-Wj-18d">
@@ -67,6 +59,15 @@
                     <view key="view" contentMode="scaleToFill" id="jIb-6Z-0Ft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clH-jA-fmb">
+                                <rect key="frame" x="16" y="20" width="94" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4jb-7b-PmH"/>
                     </view>
@@ -74,12 +75,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8I-0R-xAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="770"/>
+            <point key="canvasLocation" x="233" y="520"/>
         </scene>
     </scenes>
     <resources>
         <image name="Agenda" width="25" height="25"/>
         <image name="Gear" width="25" height="25"/>
-        <image name="Plus" width="25" height="25"/>
     </resources>
 </document>
