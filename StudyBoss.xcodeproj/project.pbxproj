@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		734F9EC91F849B1B0035DDFF /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F9EC81F849B1B0035DDFF /* ThirdViewController.swift */; };
-		734F9ECB1F849B990035DDFF /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F9ECA1F849B990035DDFF /* FourthViewController.swift */; };
 		73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */; };
 		73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */; };
 		73F9C8C91F7B52050054CDF3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C81F7B52050054CDF3 /* SecondViewController.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		734F9EC81F849B1B0035DDFF /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		734F9ECA1F849B990035DDFF /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		73F9C8C11F7B52050054CDF3 /* StudyBoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */,
 				73F9C8C81F7B52050054CDF3 /* SecondViewController.swift */,
 				734F9EC81F849B1B0035DDFF /* ThirdViewController.swift */,
-				734F9ECA1F849B990035DDFF /* FourthViewController.swift */,
 				73F9C8CA1F7B52050054CDF3 /* Main.storyboard */,
 				73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */,
 				73F9C8CF1F7B52050054CDF3 /* LaunchScreen.storyboard */,
@@ -212,7 +209,6 @@
 				73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */,
 				734F9EC91F849B1B0035DDFF /* ThirdViewController.swift in Sources */,
 				73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */,
-				734F9ECB1F849B990035DDFF /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

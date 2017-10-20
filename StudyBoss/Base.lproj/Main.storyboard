@@ -19,11 +19,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Decks" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Decks" image="Agenda" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-619"/>
+            <point key="canvasLocation" x="154" y="-637"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -36,13 +36,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="t9r-8x-0bc" kind="relationship" relationship="viewControllers" id="RQM-Mj-TgW"/>
                         <segue destination="ygi-7z-Ypf" kind="relationship" relationship="viewControllers" id="gaT-22-Grg"/>
+                        <segue destination="t9r-8x-0bc" kind="relationship" relationship="viewControllers" id="RQM-Mj-TgW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-610" y="52"/>
         </scene>
         <!--New Set-->
         <scene sceneID="RR3-GG-blv">
@@ -54,11 +54,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="M1W-jH-mcV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New Set" image="second" id="X7S-5c-yBb"/>
+                    <tabBarItem key="tabBarItem" title="New Set" image="Plus" id="X7S-5c-yBb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cm-WH-8Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="960"/>
+            <point key="canvasLocation" x="153" y="52"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ka0-Wj-18d">
@@ -70,15 +70,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4jb-7b-PmH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="Lm9-Kt-0Cd" userLabel="Third"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Gear" id="Lm9-Kt-0Cd" userLabel="Third"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8I-0R-xAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="175"/>
+            <point key="canvasLocation" x="153" y="770"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Agenda" width="25" height="25"/>
+        <image name="Gear" width="25" height="25"/>
+        <image name="Plus" width="25" height="25"/>
     </resources>
 </document>
