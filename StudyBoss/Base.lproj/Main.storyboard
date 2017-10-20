@@ -19,9 +19,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Agenda" image="Agenda" id="acW-dT-cKf">
-                        <inset key="imageInsets" minX="0.0" minY="20" maxX="0.0" maxY="14"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,9 +35,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="Stats" id="cPa-gy-q4n">
-                        <inset key="imageInsets" minX="0.0" minY="58" maxX="0.0" maxY="53"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="first" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,9 +71,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="M1W-jH-mcV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New Set" image="Plus" id="X7S-5c-yBb">
-                        <inset key="imageInsets" minX="0.0" minY="242" maxX="0.0" maxY="241"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="New Set" image="second" id="X7S-5c-yBb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cm-WH-8Kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,9 +87,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4jb-7b-PmH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Gear" id="Lm9-Kt-0Cd" userLabel="Third">
-                        <inset key="imageInsets" minX="0.0" minY="99" maxX="0.0" maxY="96"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="Lm9-Kt-0Cd" userLabel="Third"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8I-0R-xAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,9 +95,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Agenda" width="100" height="100"/>
-        <image name="Gear" width="360" height="360"/>
-        <image name="Plus" width="1000" height="1000"/>
-        <image name="Stats" width="256" height="256"/>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
