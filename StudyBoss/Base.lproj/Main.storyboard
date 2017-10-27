@@ -95,12 +95,11 @@
             </objects>
             <point key="canvasLocation" x="-1402" y="687"/>
         </scene>
-        <!--Item-->
+        <!--Decks-->
         <scene sceneID="ak1-v0-mm5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ml3-IA-kav" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfN-f7-bBQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Decks" id="Wdq-7q-jK6"/>
+                    <tabBarItem key="tabBarItem" title="Decks" image="Decks" id="Wdq-7q-jK6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="37f-zC-yIL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -111,6 +110,7 @@
                         <segue destination="LVV-cG-RV8" kind="relationship" relationship="rootViewController" id="NJh-96-UKm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ml3-IA-kav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1402" y="-108"/>
         </scene>
