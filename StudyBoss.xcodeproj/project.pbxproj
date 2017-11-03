@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		731072291FA2E21C00F9DEC1 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731072281FA2E21C00F9DEC1 /* DeckTableViewController.swift */; };
-		73E2AA641FA2DA5400D3E041 /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2AA631FA2DA5400D3E041 /* DeckTableViewCell.swift */; };
+		73EA79DA1FAC224100D9A352 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79D91FAC224100D9A352 /* Deck.swift */; };
+		73EA79DE1FAC280300D9A352 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79DD1FAC280300D9A352 /* DeckTableViewController.swift */; };
+		73EA79E01FAC29B300D9A352 /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79DF1FAC29B300D9A352 /* DeckTableViewCell.swift */; };
 		73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */; };
 		73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */; };
 		73F9C8C91F7B52050054CDF3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C81F7B52050054CDF3 /* SecondViewController.swift */; };
@@ -29,8 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		731072281FA2E21C00F9DEC1 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewController.swift; sourceTree = "<group>"; };
-		73E2AA631FA2DA5400D3E041 /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		73EA79D91FAC224100D9A352 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		73EA79DD1FAC280300D9A352 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeckTableViewController.swift; path = ../DeckTableViewController.swift; sourceTree = "<group>"; };
+		73EA79DF1FAC29B300D9A352 /* DeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		73F9C8C11F7B52050054CDF3 /* StudyBoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -83,12 +85,13 @@
 		73F9C8C31F7B52050054CDF3 /* StudyBoss */ = {
 			isa = PBXGroup;
 			children = (
+				73EA79DD1FAC280300D9A352 /* DeckTableViewController.swift */,
 				73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */,
 				73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */,
-				73E2AA631FA2DA5400D3E041 /* DeckTableViewCell.swift */,
-				731072281FA2E21C00F9DEC1 /* DeckTableViewController.swift */,
+				73EA79DF1FAC29B300D9A352 /* DeckTableViewCell.swift */,
 				73F9C8C81F7B52050054CDF3 /* SecondViewController.swift */,
 				73F9C8CA1F7B52050054CDF3 /* Main.storyboard */,
+				73EA79D91FAC224100D9A352 /* Deck.swift */,
 				73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */,
 				73F9C8CF1F7B52050054CDF3 /* LaunchScreen.storyboard */,
 				73F9C8D21F7B52050054CDF3 /* Info.plist */,
@@ -208,11 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E2AA641FA2DA5400D3E041 /* DeckTableViewCell.swift in Sources */,
+				73EA79E01FAC29B300D9A352 /* DeckTableViewCell.swift in Sources */,
+				73EA79DA1FAC224100D9A352 /* Deck.swift in Sources */,
 				73F9C8C91F7B52050054CDF3 /* SecondViewController.swift in Sources */,
 				73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */,
 				73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */,
-				731072291FA2E21C00F9DEC1 /* DeckTableViewController.swift in Sources */,
+				73EA79DE1FAC280300D9A352 /* DeckTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
