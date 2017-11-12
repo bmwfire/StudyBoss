@@ -8,24 +8,40 @@
 
 import UIKit
 
-class DeckTableViewController: UITableViewController {
+class DeckTableViewController:
+    UITableViewController {
+    //Mark: Properties
+    var decks = [Deck]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Load the sample data.
+        loadSampleDecks()
+    }
+    //Mark: Private Methods
 
+    private func loadSampleDecks(){
+        guard let deck1 = Deck(name: "Test1") else{
+            fatalError("Unable to instantiate deck1")
+        }
+        guard let deck2 = Deck(name: "Test1") else{
+            fatalError("Unable to instantiate deck2")
+        }
+        guard let deck3 = Deck(name: "Test1") else{
+            fatalError("Unable to instantiate deck3")
+        }
+        
+        decks += [deck1, deck2, deck3]
+    }
+    
     @IBAction func unwindToDeckList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? FirstViewController, let deck = sourceViewController.deck {
             let newIndexPath = IndexPath(row: decks.count, section: 0)
         }
     }
+ 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,19 +57,26 @@ class DeckTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return decks.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "DeckTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DeckTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of DeckTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let deck = decks[indexPath.row]
+        
+        cell.nameLabel.text = deck.name
+        
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

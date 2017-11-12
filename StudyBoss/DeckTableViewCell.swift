@@ -12,6 +12,7 @@ class DeckTableViewCell: UITableViewCell {
     //Mark: Properties
     @IBOutlet weak var nameLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

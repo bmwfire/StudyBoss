@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-3P-TBA" customClass="nameLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-3P-TBA">
                                             <rect key="frame" x="8" y="8" width="359" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -35,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="uCC-3P-TBA" id="1Zx-py-K9x"/>
+                                    <outlet property="nameLabel" destination="uCC-3P-TBA" id="Mkd-6E-8TU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,9 +51,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="nameLabel" destination="uCC-3P-TBA" id="2jz-00-lm3"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixy-Xt-JD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +192,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xc7-BC-XRK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="-109.29535232383809"/>
+            <point key="canvasLocation" x="1116" y="-110"/>
         </scene>
         <!--Decks-->
         <scene sceneID="ak1-v0-mm5">
@@ -232,7 +229,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g3-h4-0T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563.20000000000005" y="-108.84557721139431"/>
+            <point key="canvasLocation" x="322" y="-110"/>
         </scene>
     </scenes>
     <resources>
