@@ -39,6 +39,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
+        
+        let name = nameTextField.text ?? ""
+        
+        deck = Deck(name: name)
     }
     
     override func viewDidLoad() {
