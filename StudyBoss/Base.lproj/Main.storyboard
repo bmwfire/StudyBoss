@@ -179,11 +179,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Deck" id="1oF-Wg-edX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87">
-                            <connections>
-                                <segue destination="RRx-Uq-m2K" kind="show" id="ML6-Db-Nl7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="46k-k5-OnV" customClass="saveButton">
                             <connections>
                                 <segue destination="Xc7-BC-XRK" kind="unwind" unwindAction="unwindToDeckListWithSender:" id="QrP-Ud-Sh7"/>
@@ -244,7 +240,4 @@
         <image name="Decks" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ML6-Db-Nl7"/>
-    </inferredMetricsTieBreakers>
 </document>
