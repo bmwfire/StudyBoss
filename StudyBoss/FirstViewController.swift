@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITextFieldDelegate {
+class FirstViewController: UITableViewController, UITextFieldDelegate {
     //MARK: Properties
     
     //@IBOutlet weak var Front: UITextView!
@@ -25,7 +25,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     //MARK: Private Methods
     private func loadSampleCards(){
         guard let card1 = Card(front: "Front of the Card", back: "Back of the Card") else{
-            fatalError("Unable to instantiate deck1")
+            fatalError("Unable to instantiate card1")
         }
         
         cards += [card1]
@@ -67,6 +67,33 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return cards.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "CardTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CardTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CardTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let card = cards[indexPath.row]
+        
+        cell.Front.text = card.front
+        cell.Back.text = card.back
+        return cell
     }
 
 
