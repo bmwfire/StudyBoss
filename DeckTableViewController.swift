@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class DeckTableViewController:
     UITableViewController {
@@ -15,6 +16,8 @@ class DeckTableViewController:
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         
         // Load the sample data.
         loadSampleDecks()
