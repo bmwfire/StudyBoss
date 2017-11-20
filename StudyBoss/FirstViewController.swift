@@ -12,12 +12,24 @@ import os.log
 class FirstViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     
+    //@IBOutlet weak var Front: UITextView!
+    //@IBOutlet weak var Back: UITextView!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var deckNameLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var deck: Deck?
+    var cards = [Card]()
     
+    //MARK: Private Methods
+    private func loadSampleCards(){
+        guard let card1 = Card(front: "Front of the Card", back: "Back of the Card") else{
+            fatalError("Unable to instantiate deck1")
+        }
+        
+        cards += [card1]
+    }
     
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -46,10 +58,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
+        loadSampleCards();
     }
 
     override func didReceiveMemoryWarning() {
