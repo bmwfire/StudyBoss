@@ -51,7 +51,7 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
+     }
     
     //MARK: Initialization
     override func viewDidLoad() {

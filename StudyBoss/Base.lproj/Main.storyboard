@@ -82,64 +82,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Notification Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyv-J7-gYv">
-                                <rect key="frame" x="16" y="64" width="343" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mF3-DE-XJW">
-                                <rect key="frame" x="254" y="164" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="Option_1:" destination="t9r-8x-0bc" eventType="valueChanged" id="JXh-D6-2nq"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8d-DO-mr0">
-                                <rect key="frame" x="254" y="203" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="Option_2:" destination="t9r-8x-0bc" eventType="valueChanged" id="mLq-DY-XUK"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQA-Gl-dh0">
-                                <rect key="frame" x="254" y="242" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="Option_3:" destination="t9r-8x-0bc" eventType="valueChanged" id="HgH-Ng-Bi7"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEz-Vm-8h1">
-                                <rect key="frame" x="60" y="169" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-75-ig2">
-                                <rect key="frame" x="60" y="208" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-BE-SD3">
-                                <rect key="frame" x="60" y="247" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6rf-ME-aPf">
+                                <rect key="frame" x="0.0" y="114" width="375" height="140.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Notification Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyv-J7-gYv">
+                                        <rect key="frame" x="88" y="0.0" width="199" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9I-5M-FnT">
+                                        <rect key="frame" x="158.5" y="34.5" width="58" height="30"/>
+                                        <state key="normal" title="1 minute"/>
+                                        <connections>
+                                            <action selector="Option_1:" destination="t9r-8x-0bc" eventType="touchUpInside" id="2hA-Mv-zFe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FR4-L2-DJa">
+                                        <rect key="frame" x="153.5" y="72.5" width="68" height="30"/>
+                                        <state key="normal" title="2 minutes"/>
+                                        <connections>
+                                            <action selector="Option_2:" destination="t9r-8x-0bc" eventType="touchUpInside" id="sFv-xB-LRZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qee-MS-Ghh">
+                                        <rect key="frame" x="153.5" y="110.5" width="68" height="30"/>
+                                        <state key="normal" title="3 minutes"/>
+                                        <connections>
+                                            <action selector="Option_3:" destination="t9r-8x-0bc" eventType="touchUpInside" id="2jZ-dG-uIi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6rf-ME-aPf" firstAttribute="top" secondItem="4jb-7b-PmH" secondAttribute="top" constant="50" id="UKA-kL-W8b"/>
+                            <constraint firstItem="6rf-ME-aPf" firstAttribute="leading" secondItem="jIb-6Z-0Ft" secondAttribute="leading" id="bgk-lb-3sh"/>
+                            <constraint firstItem="4jb-7b-PmH" firstAttribute="trailing" secondItem="6rf-ME-aPf" secondAttribute="trailing" id="wom-tI-q18"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4jb-7b-PmH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zo8-Wd-NrB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8I-0R-xAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423.19999999999999" y="678.71064467766121"/>
+            <point key="canvasLocation" x="-423.5" y="678.5"/>
         </scene>
         <!--New Deck-->
         <scene sceneID="GS7-o9-YSe">

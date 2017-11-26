@@ -10,7 +10,7 @@ import UIKit
 //import UserNotifications
 import os.log
 
-class FirstViewController: UITableViewController, UITextFieldDelegate {
+class FirstViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     
     //@IBOutlet weak var Front: UITextView!
@@ -73,7 +73,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
     }
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+   /* override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -97,7 +97,7 @@ class FirstViewController: UITableViewController, UITextFieldDelegate {
         cell.Front.text = card.front
         cell.Back.text = card.back
         return cell
-    }
+    }*/
 
 
 }
