@@ -205,6 +205,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-Gu-cvc">
+                                <rect key="frame" x="155" y="563" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Card"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.5" y="0.0" width="1" height="1"/>
@@ -229,7 +234,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xc7-BC-XRK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="-110.19490254872565"/>
+            <point key="canvasLocation" x="1335" y="-108"/>
         </scene>
         <!--Decks-->
         <scene sceneID="ak1-v0-mm5">
