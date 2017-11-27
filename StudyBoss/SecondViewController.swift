@@ -11,20 +11,39 @@ import UserNotifications
 
 class SecondViewController: UIViewController {
     
+    //MARK: Clock Toggle
+    @IBOutlet weak var datePickerTxt: UITextField!
     
+    let datePicker = UIDatePicker()
     
     //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        //Initialize Notification Prompt at startup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        
+        //Create DatePicker
+        createDatePicker()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: Clock Function
+    func createDatePicker() {
+        
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //bar button item
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        toolbar.setItems([doneButton], animated: false)
+        
+        datePickerTxt.inputAccessoryView = toolbar
+        
+        //assigning date picker to text field
+        datePickerTxt.inputView = datePicker
     }
+    
     /*//MARK: Notification Time Options
      //Note intervals for showcasing is 1-3 minutes
      //Note that for repeats to be true, time interval must be at least 60 or greater

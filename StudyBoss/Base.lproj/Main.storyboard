@@ -153,6 +153,9 @@
                         <viewLayoutGuide key="safeArea" id="4jb-7b-PmH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zo8-Wd-NrB"/>
+                    <connections>
+                        <outlet property="datePickerTxt" destination="P80-es-stQ" id="3vs-L9-nbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8I-0R-xAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
