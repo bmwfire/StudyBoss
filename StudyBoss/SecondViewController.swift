@@ -16,6 +16,16 @@ class SecondViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     
+    //MARK: Notification Frequency
+    @IBAction func thirtyMin(_ sender: Any) {
+    }
+    
+    @IBAction func fourtyFiveMin(_ sender: Any) {
+    }
+    
+    @IBAction func sixtyMin(_ sender: Any) {
+    }
+    
     //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +44,29 @@ class SecondViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
-        //bar button item
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        //bar button for toolbar
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated: false)
         
         datePickerTxt.inputAccessoryView = toolbar
         
         //assigning date picker to text field
         datePickerTxt.inputView = datePicker
+        
+        //format picker for time
+        datePicker.datePickerMode = .time
+    }
+    
+    @objc func donePressed() {
+        
+        //format time
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .medium
+        let dateString = formatter.string(from: datePicker.date)
+        
+        datePickerTxt.text = "\(dateString)"
+        self.view.endEditing(true)
     }
     
     /*//MARK: Notification Time Options
