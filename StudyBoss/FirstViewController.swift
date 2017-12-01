@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class FirstViewController: UIViewController, UITableViewDelegate /*UITableViewDataSource*/ {
     
     //MARK: Properties
     
@@ -71,7 +71,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
         
         tableView.delegate = self
-        tableView.dataSource = self as! UITableViewDataSource
+        tableView.dataSource = self as? UITableViewDataSource
         loadSampleCards();
     }
 
@@ -108,7 +108,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         
-    }
+    }*/
 
 }
 
