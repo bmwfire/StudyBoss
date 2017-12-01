@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import UserNotifications
 import os.log
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
@@ -63,8 +62,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
         loadSampleCards();
-        
-        //UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
 
     override func didReceiveMemoryWarning() {
