@@ -270,6 +270,7 @@
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="nameTextField" destination="jfs-RY-eFM" id="km5-9L-win"/>
                         <outlet property="saveButton" destination="46k-k5-OnV" id="5cT-Tw-UPz"/>
+                        <outlet property="tableView" destination="Pfj-p9-4S7" id="Dzp-o3-6u5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
