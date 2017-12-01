@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate /*UITableViewDataSource*/ {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
     
@@ -81,7 +81,7 @@ class FirstViewController: UIViewController, UITableViewDelegate /*UITableViewDa
     }
     // MARK: - Table view data source
     
-   /* override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -106,9 +106,9 @@ class FirstViewController: UIViewController, UITableViewDelegate /*UITableViewDa
         cell.Back.text = card.back
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath){
         
-    }*/
+    }
 
 }
 
