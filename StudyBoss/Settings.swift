@@ -25,6 +25,9 @@ class SecondViewController: UIViewController {
         
         //Create DatePicker
         createDatePicker()
+        
+        //Install Clock Notification
+        clockNotification()
     }
     
     //MARK: Clock Function
@@ -54,16 +57,35 @@ class SecondViewController: UIViewController {
         formatter.dateStyle = .none
         formatter.timeStyle = .medium
         
-        //Use dateString variable to attach notification frequencies
         let dateString = formatter.string(from: datePicker.date)
         
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
-        
+    }
+    
+    func clockNotification() {
         //Notify user based on time-set
         let content = UNMutableNotificationContent()
         content.title = "Please conduct one quiz!"
         content.badge = 1
+        
+        //Extracting hour and minute from UIDatePicker
+        datePicker.datePickerMode = .time
+        
+        let date = datePicker.date
+        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
+        let hour = components.hour!
+        let minute = components.minute!
+        
+        var time = DateComponents()
+        time.hour = hour
+        time.minute = minute
+        
+        //Set notification at clock time
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     //MARK: Notification Frequency
@@ -75,7 +97,7 @@ class SecondViewController: UIViewController {
         content.badge = 1
         
         //Setting 1 minute for first slider
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (30*60), repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (30*60), repeats: false)
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
