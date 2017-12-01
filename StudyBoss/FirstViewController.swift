@@ -4,13 +4,13 @@
 //
 //  Created by Brandon Wong on 9/26/17.
 //  Copyright © 2017 BMW Fire. All rights reserved.
-/// UITableViewDataSource
+///
 
 import UIKit
 //import UserNotifications
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate{
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     //MARK: Properties
     
@@ -93,6 +93,7 @@ class FirstViewController: UIViewController, UITableViewDelegate{
         return cards.count
     }
     
+    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "CardTableViewCell"
@@ -108,7 +109,9 @@ class FirstViewController: UIViewController, UITableViewDelegate{
         cell.Back.text = card.back
         return cell
     }
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
+    }
 
 }
 
