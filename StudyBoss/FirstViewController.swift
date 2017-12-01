@@ -84,7 +84,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     // MARK: - Table view data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+   /* override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
