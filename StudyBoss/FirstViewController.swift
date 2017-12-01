@@ -4,13 +4,14 @@
 //
 //  Created by Brandon Wong on 9/26/17.
 //  Copyright © 2017 BMW Fire. All rights reserved.
-//
+/// UITableViewDataSource
 
 import UIKit
 //import UserNotifications
 import os.log
 
-class FirstViewController: UIViewController, UITextFieldDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate{
+    
     //MARK: Properties
     
     //@IBOutlet weak var Front: UITextView!
@@ -22,6 +23,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     var deck: Deck?
     var cards = [Card]()
+    let backs: [String] = ["Back of the Card2"]
+    let front: [String] = ["Front of the Card2"]
+    let cellReuseIdentifier = "cell"
+    @IBOutlet weak var tableView: CardTableView!
     
     //MARK: Private Methods
     private func loadSampleCards(){
@@ -61,7 +66,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        nameTextField.delegate = self
+        //nameTextField.delegate = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+
+       
+        
+        tableView.delegate = self
+        tableView.dataSource = self as! UITableViewDataSource
         loadSampleCards();
         
         //UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
@@ -83,7 +94,6 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "CardTableViewCell"
         

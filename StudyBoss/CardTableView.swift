@@ -17,7 +17,12 @@ class CardTableView: UITableView {
         // Drawing code
     }
     */
+    let backs: [String] = ["Back of the Card1"]
+    let front: [String] = ["Front of the Card1"]
     var cards = [Card]()
+    
+    let cellReuseIdentifier = "cell"
+    
     
     //MARK: Private Methods
     private func loadSampleCards(){
@@ -27,5 +32,43 @@ class CardTableView: UITableView {
         
         cards += [card1]
     }
+    
+    //MARK: Navigation
+    func viewDidLoad() {
+        //super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        //nameTextField.delegate = self
+        loadSampleCards();
+        
+        //UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+    }
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return cards.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "CardTableViewCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CardTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CardTableViewCell.")
+        }
+        
+        // Fetches the appropriate meal for the data source layout.
+        let card = cards[indexPath.row]
+        
+        cell.Front.text = card.front
+        cell.Back.text = card.back
+        return cell
+    }
+    
 
 }

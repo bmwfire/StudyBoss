@@ -11,9 +11,9 @@ import UIKit
 class Deck{
     //Mark: Properties
     var name: String
-    
+    var cards = [Card]()
     //MARK: Initialization
-    init?(name: String) {
+    init?(name: String/*, cards: [Card]*/) {
         if name.isEmpty{
             return nil
         }
