@@ -71,7 +71,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
         
         tableView.delegate = self
-        tableView.dataSource = self as? UITableViewDataSource
+        tableView.dataSource = self as UITableViewDataSource
         loadSampleCards();
     }
 
@@ -106,7 +106,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.Back.text = card.back
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
     }
 
