@@ -59,15 +59,11 @@ class SecondViewController: UIViewController {
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
         
-        //Extracting hour and minute from UIDatePicker
+        //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
-        let hour = components.hour!
-        let minute = components.minute!
-        
-        //Setting Date Components from UIDatePicker
         var time = DateComponents()
-        time.hour = hour
-        time.minute = minute
+        time.hour = components.hour!
+        time.minute = components.minute!
         
         //Notify user based on time-set
         let content = UNMutableNotificationContent()
