@@ -23,11 +23,8 @@ class SecondViewController: UIViewController {
         //Initialize Notification Prompt at startup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         
-        //Create DatePicker
+        //Create DatePicker and Install Clock Notification
         createDatePicker()
-        
-        //Install Clock Notification
-        clockNotification()
     }
     
     //MARK: Clock Function
@@ -55,34 +52,30 @@ class SecondViewController: UIViewController {
         //format time
         let formatter = DateFormatter()
         formatter.dateStyle = .none
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
         
         let dateString = formatter.string(from: datePicker.date)
         
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
-    }
-    
-    func clockNotification() {
+        
+        //Extracting hour and minute from UIDatePicker
+        let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
+        let hour = components.hour!
+        let minute = components.minute!
+        
+        //Setting Date Components from UIDatePicker
+        var time = DateComponents()
+        time.hour = hour
+        time.minute = minute
+        
         //Notify user based on time-set
         let content = UNMutableNotificationContent()
         content.title = "Please conduct one quiz!"
         content.badge = 1
         
-        //Extracting hour and minute from UIDatePicker
-        datePicker.datePickerMode = .time
-        
-        let date = datePicker.date
-        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
-        let hour = components.hour!
-        let minute = components.minute!
-        
-        var time = DateComponents()
-        time.hour = hour
-        time.minute = minute
-        
         //Set notification at clock time
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: time, repeats: false)
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
