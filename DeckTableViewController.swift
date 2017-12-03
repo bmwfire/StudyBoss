@@ -28,10 +28,10 @@ class DeckTableViewController:
         guard let deck1 = Deck(name: "Test1") else{
             fatalError("Unable to instantiate deck1")
         }
-        guard let deck2 = Deck(name: "Test1") else{
+        guard let deck2 = Deck(name: "Test2") else{
             fatalError("Unable to instantiate deck2")
         }
-        guard let deck3 = Deck(name: "Test1") else{
+        guard let deck3 = Deck(name: "Test3") else{
             fatalError("Unable to instantiate deck3")
         }
         
@@ -73,7 +73,7 @@ class DeckTableViewController:
             fatalError("The dequeued cell is not an instance of DeckTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate deck for the data source layout.
         let deck = decks[indexPath.row]
         
         cell.nameLabel.text = deck.name

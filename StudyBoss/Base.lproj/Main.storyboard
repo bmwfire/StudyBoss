@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeckTableViewCell" rowHeight="50" id="MaZ-JL-GSE" customClass="DeckTableViewCell" customModule="StudyBoss" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DeckTableViewCell" rowHeight="50" id="MaZ-JL-GSE" customClass="DeckTableViewCell" customModule="StudyBoss" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MaZ-JL-GSE" id="S4n-e5-5Ui">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-3P-TBA">
@@ -216,7 +216,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample Front Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tio-0q-uE6">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample Front Text 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tio-0q-uE6">
                                                     <rect key="frame" x="84" y="11" width="170" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,11 +239,18 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TFu-Mp-rQI" id="miR-Bz-kFm"/>
+                                    <outlet property="delegate" destination="TFu-Mp-rQI" id="3K9-kq-qkS"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-Gu-cvc">
-                                <rect key="frame" x="155" y="563" width="65" height="30"/>
+                                <rect key="frame" x="16" y="169" width="65" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Card"/>
+                                <connections>
+                                    <action selector="addData2:" destination="TFu-Mp-rQI" eventType="touchUpInside" id="NMH-bh-WOe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,6 +268,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="CardTableView" destination="Pfj-p9-4S7" id="h8y-f4-sNE"/>
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="nameTextField" destination="jfs-RY-eFM" id="km5-9L-win"/>
                         <outlet property="saveButton" destination="46k-k5-OnV" id="5cT-Tw-UPz"/>
@@ -270,7 +278,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xc7-BC-XRK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="-108"/>
+            <point key="canvasLocation" x="1333.5999999999999" y="-108.39580209895054"/>
         </scene>
         <!--Decks-->
         <scene sceneID="ak1-v0-mm5">

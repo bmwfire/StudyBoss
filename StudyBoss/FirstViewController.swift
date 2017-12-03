@@ -19,6 +19,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var deckNameLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var CardTableView: UITableView!
+    @IBOutlet weak var AddButton: UIButton!
     
     var deck: Deck?
     var cards = [Card]()
@@ -27,9 +29,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let cellReuseIdentifier = "cell"
     @IBOutlet weak var tableView: CardTableView!
     
+    
+    
     //MARK: Private Methods
     private func loadSampleCards(){
-        guard let card1 = Card(front: "Front of the Card", back: "Back of the Card") else{
+        guard let card1 = Card(front: "Front of the Card2", back: "Back of the Card") else{
             fatalError("Unable to instantiate card1")
         }
         
@@ -46,6 +50,38 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     //MARK: Actions
     
+    @IBAction func addData2(_ sender: Any) {
+        guard let newCard1 = Card(front: "3", back: "2") else{
+            fatalError("Unable to instantiate newCard1")
+        }
+        cards += [newCard1]
+        tableView.reloadData()
+    }
+
+    /*
+    @IBAction func addData(sender: AnyObject){
+        AddButton = sender as! UIButton
+        guard let newCard2 = Card(front: "Front of the Card1", back: "Back of the Card") else{
+            fatalError("Unable to instantiate newCard2")
+        }
+        cards += [newCard2]
+        tableView.reloadData()
+        /*
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath(row: cards.count-1, section: 0)], with: . automatic)
+        tableView.endUpdates()
+        */
+    }
+ 
+    
+    func action(sender: UIButton!){
+        guard let newCard3 = Card(front: "Front of the Card2", back: "Back of the Card") else{
+        fatalError("Unable to instantiate newCard3")
+        }
+        cards += [newCard3]
+        tableView.reloadData()
+    }
+ */
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -80,7 +116,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     // MARK: - Table view data source
-    
+    /*
+    - (void)viewDidAppear:(BOOL)animated
+    {
+        [self.tableView setFrame:CGRectMake(x,y,width,height)];
+    }
+    */
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -89,6 +130,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // #warning Incomplete implementation, return the number of rows
         return cards.count
     }
+
     
     //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
