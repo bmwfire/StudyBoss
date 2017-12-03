@@ -23,7 +23,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var deck: Deck?
     var cards = [Card]()
     let backs: [String] = ["Back of the Card2"]
-    let front: [String] = ["Front of the Card2"]
+    let fronts: [String] = ["Front of the Card2"]
     let cellReuseIdentifier = "cell"
     @IBOutlet weak var tableView: CardTableView!
     
@@ -109,6 +109,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
     }
+    func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat{
+         return 180
+    }
+   
 
 }
 

@@ -201,11 +201,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableViewCell" rowHeight="174" id="64i-8N-7Q7" customClass="CardTableViewCell" customModule="StudyBoss" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="174"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableViewCell" rowHeight="180" id="64i-8N-7Q7" customClass="CardTableViewCell" customModule="StudyBoss" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="64i-8N-7Q7" id="iX3-G1-Bse">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="173.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="179.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd4-RE-qz4">
@@ -223,14 +223,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample Front Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tio-0q-uE6">
-                                                    <rect key="frame" x="84" y="11" width="225" height="64"/>
+                                                    <rect key="frame" x="84" y="11" width="170" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecuc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UZ5-p2-ud9">
-                                                    <rect key="frame" x="84" y="93" width="225" height="67"/>
+                                                    <rect key="frame" x="84" y="93" width="170" height="67"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
