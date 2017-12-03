@@ -15,7 +15,7 @@
 		73EA79E01FAC29B300D9A352 /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79DF1FAC29B300D9A352 /* DeckTableViewCell.swift */; };
 		73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */; };
 		73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */; };
-		73F9C8C91F7B52050054CDF3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C81F7B52050054CDF3 /* Settings.swift */; };
+		73F9C8C91F7B52050054CDF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F9C8C81F7B52050054CDF3 /* SettingsViewController.swift */; };
 		73F9C8CC1F7B52050054CDF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F9C8CA1F7B52050054CDF3 /* Main.storyboard */; };
 		73F9C8CE1F7B52050054CDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */; };
 		73F9C8D11F7B52050054CDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F9C8CF1F7B52050054CDF3 /* LaunchScreen.storyboard */; };
@@ -42,7 +42,7 @@
 		73F9C8C11F7B52050054CDF3 /* StudyBoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F9C8C41F7B52050054CDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F9C8C61F7B52050054CDF3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		73F9C8C81F7B52050054CDF3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		73F9C8C81F7B52050054CDF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		73F9C8CB1F7B52050054CDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F9C8D01F7B52050054CDF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				713AD2301FC2765D005F3AC1 /* CardTableViewCell.swift */,
 				73EA79D91FAC224100D9A352 /* Deck.swift */,
 				713AD2321FC27984005F3AC1 /* Card.swift */,
-				73F9C8C81F7B52050054CDF3 /* Settings.swift */,
+				73F9C8C81F7B52050054CDF3 /* SettingsViewController.swift */,
 				73F9C8CA1F7B52050054CDF3 /* Main.storyboard */,
 				73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */,
 				73F9C8CF1F7B52050054CDF3 /* LaunchScreen.storyboard */,
@@ -222,7 +222,7 @@
 			files = (
 				73EA79E01FAC29B300D9A352 /* DeckTableViewCell.swift in Sources */,
 				73EA79DA1FAC224100D9A352 /* Deck.swift in Sources */,
-				73F9C8C91F7B52050054CDF3 /* Settings.swift in Sources */,
+				73F9C8C91F7B52050054CDF3 /* SettingsViewController.swift in Sources */,
 				73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */,
 				73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */,
 				73EA79DE1FAC280300D9A352 /* DeckTableViewController.swift in Sources */,

@@ -118,24 +118,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="30 minutes"/>
                                         <connections>
-                                            <action selector="thirtyMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="XQo-y5-uQv"/>
+                                            <action selector="thirtyMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="ayn-uu-XWn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbE-gj-Yve">
                                         <rect key="frame" x="0.0" y="29" width="175" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="45 minutes"/>
-                                        <connections>
-                                            <action selector="fourtyFiveMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="CCb-ku-XIy"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-gx-6fp">
                                         <rect key="frame" x="0.0" y="58" width="175" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="60 minutes"/>
-                                        <connections>
-                                            <action selector="sixtyMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="PEY-De-cUd"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

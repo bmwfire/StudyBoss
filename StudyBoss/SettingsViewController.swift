@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  SettingsViewController.swift
 //  StudyBoss
 //
 //  Created by Brandon Wong on 9/26/17.
@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
         createDatePicker()
     }
     
-    //MARK: Clock Function
+    //MARK: Notificiation Time
     func createDatePicker() {
         
         //toolbar
@@ -47,6 +47,7 @@ class SecondViewController: UIViewController {
         datePicker.datePickerMode = .time
     }
     
+    //Done Button
     @objc func donePressed() {
         
         //format time
@@ -59,6 +60,11 @@ class SecondViewController: UIViewController {
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
         
+        clockNotification()
+    }
+    
+    //Function that notifies the user at specified time set.
+    func clockNotification() {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -78,44 +84,35 @@ class SecondViewController: UIViewController {
     }
     
     //MARK: Notification Frequency
-    //Note that for repeats to be true, time interval must be at least 60 or greater
-    @IBAction func thirtyMin(_ sender: Any) {
-        //Option 1
+    func timedNotification(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()) {
+        
+        //Set Trigger and Content for buttons
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        
         let content = UNMutableNotificationContent()
         content.title = "Please conduct one quiz!"
         content.badge = 1
         
-        //Setting 1 minute for first slider
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (30*60), repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
     
-    @IBAction func fourtyFiveMin(_ sender: Any) {
-        //Option 2
-        let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz!"
-        content.badge = 1
+    //MARK: Button Toggle
+    @IBAction func thirtyMin(_ sender: UIButton) {
         
-        //Setting 2 minutes for second slider
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (45*60), repeats: true)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
-    
-    @IBAction func sixtyMin(_ sender: Any) {
-        //Option 3
-        let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz!"
-        content.badge = 1
-        
-        //Setting 3 minutes for third slider
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: (60*60), repeats: true)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        //Call Timed Notification
+        timedNotification(inSeconds: 3) { (success) in
+            if success {
+                print("Successfully Notified")
+            }
+        }
     }
 }
 
