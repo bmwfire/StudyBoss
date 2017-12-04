@@ -36,6 +36,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="uCC-3P-TBA" id="Mkd-6E-8TU"/>
+                                    <segue destination="TFu-Mp-rQI" kind="show" identifier="ShowDetail" id="VsE-d1-8lA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -283,6 +284,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="CardTableView" destination="Pfj-p9-4S7" id="h8y-f4-sNE"/>
+                        <outlet property="cancel" destination="Rr7-1c-K87" id="KD2-KQ-h3S"/>
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="nameTextField" destination="jfs-RY-eFM" id="km5-9L-win"/>
                         <outlet property="saveButton" destination="46k-k5-OnV" id="5cT-Tw-UPz"/>
@@ -329,7 +331,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g3-h4-0T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-110"/>
+            <point key="canvasLocation" x="401" y="-482"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RUm-G3-m2p">
@@ -355,4 +357,7 @@
         <image name="Decks" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VsE-d1-8lA"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import os.log
 
 class DeckTableViewController:
     UITableViewController {
@@ -17,14 +18,20 @@ class DeckTableViewController:
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = editButtonItem
+        if let savedDecks = loadDecks() {
+            decks += savedDecks
+        }else{
+            loadSampleDecks()
+        }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         
         // Load the sample data.
-        loadSampleDecks()
     }
     //Mark: Private Methods
 
     private func loadSampleDecks(){
+        /* TODO make proper sample decks
         guard let deck1 = Deck(name: "Test1") else{
             fatalError("Unable to instantiate deck1")
         }
@@ -34,15 +41,33 @@ class DeckTableViewController:
         guard let deck3 = Deck(name: "Test3") else{
             fatalError("Unable to instantiate deck3")
         }
-        
-        decks += [deck1, deck2, deck3]
+ 
+        decks += [deck1, deck2, deck3]*/
+    }
+    
+    private func saveDecks() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(decks, toFile: Deck.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Decks successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save decks...", log: OSLog.default, type: .error)
+        }
     }
     
     @IBAction func unwindToDeckList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? FirstViewController, let deck = sourceViewController.deck {
-            let newIndexPath = IndexPath(row: decks.count, section: 0)
-            decks.append(deck)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing deck.
+                decks[selectedIndexPath.row] = deck
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                
+                let newIndexPath = IndexPath(row: decks.count, section: 0)
+                decks.append(deck)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            saveDecks()
         }
     }
  
@@ -52,6 +77,8 @@ class DeckTableViewController:
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -81,6 +108,10 @@ class DeckTableViewController:
         return cell
     }
     
+    private func loadDecks() -> [Deck]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Deck.ArchiveURL.path) as? [Deck]
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -89,17 +120,20 @@ class DeckTableViewController:
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            decks.remove(at: indexPath.row)
+            saveDecks()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.
@@ -116,14 +150,34 @@ class DeckTableViewController:
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+        case "AddItem":
+            os_log("Adding a new deck.", log: OSLog.default, type: .debug)
+        case "ShowDetail":
+            guard let deckDetailViewController = segue.destination as? FirstViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedDeckCell = sender as? DeckTableViewCell else {
+                fatalError("Unexpected sender: \(sender ?? DeckTableViewCell.self)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedDeckCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedDeck = decks[indexPath.row]
+            deckDetailViewController.deck = selectedDeck
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "AddItem","ShowDetail")")
+        }
     }
-    */
+ 
 
 }
