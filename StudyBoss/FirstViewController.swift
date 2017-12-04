@@ -22,6 +22,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var CardTableView: UITableView!
     @IBOutlet weak var AddButton: UIButton!
     
+    
     var deck: Deck?
     var cards = [Card]()
     var backs: [String] = ["Back of the Card2"]
@@ -104,10 +105,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             dismiss(animated: true, completion: nil)
         }
         else if let owningNavigationController = navigationController{
+            //TODO the dismiss functin may not suppose to be there
+            dismiss(animated: true, completion: nil)
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("The MealViewController is not inside a navigation controller.")
+            fatalError("The DeckViewController is not inside a navigation controller.")
         }
     }
     

@@ -44,7 +44,7 @@ class DeckTableViewController:
         guard let deck0 = Deck(name: "test0", cards: cards1, cardfronts: fronts1, cardbacks: backs1)else{
             fatalError("Unable to instantiate deck0")
         }
-        /* TODO make proper sample decks
+        /*
         guard let deck1 = Deck(name: "Test1") else{
             fatalError("Unable to instantiate deck1")s
         }
@@ -60,12 +60,15 @@ class DeckTableViewController:
     }
     
     private func saveDecks() {
+        
+        /* TODO FIX THIS
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(decks, toFile: Deck.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Decks successfully saved.", log: OSLog.default, type: .debug)
         } else {
             os_log("Failed to save decks...", log: OSLog.default, type: .error)
         }
+ */
     }
     
     @IBAction func unwindToDeckList(sender: UIStoryboardSegue) {
@@ -189,7 +192,7 @@ class DeckTableViewController:
             let selectedDeck = decks[indexPath.row]
             deckDetailViewController.deck = selectedDeck
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
  

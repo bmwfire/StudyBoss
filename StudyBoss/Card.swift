@@ -5,8 +5,8 @@
 //  Created by Andrew Millard on 11/19/17.
 //  Copyright © 2017 BMW Fire. All rights reserved.
 //
-
-class Card{
+import UIKit
+class Card: NSObject{
     //Mark: Properties
     var front: String
     var back: String
@@ -17,6 +17,7 @@ class Card{
         }
         self.front = front
         self.back = back
+        super.init()
     }
     
 }

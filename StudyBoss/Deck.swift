@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-
+import Foundation
 class Deck: NSObject, NSCoding{
     
     
@@ -25,6 +25,7 @@ class Deck: NSObject, NSCoding{
     
     //MARK: Initialization
     init?(name: String, cards: [Card], cardfronts: [String], cardbacks: [String]) {
+        
         if name.isEmpty{
             return nil
         }
@@ -32,34 +33,37 @@ class Deck: NSObject, NSCoding{
         self.cards = cards
         self.cardfronts = cardfronts
         self.cardbacks = cardbacks
+        super.init()
     }
     //Mark: Types
     struct PropertyKey {
-        static let name = "name"
-        static let cards = "cards"
-        static let cardfronts = "cardfronts"
-        static let cardbacks = "cardbacks"
+        static let nameKey = "name"
+        static let cardsKey = "cards"
+        static let cardfrontsKey = "cardfronts"
+        static let cardbacksKey = "cardbacks"
     }
     //Mark: NSCoding
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(cards, forKey: PropertyKey.cards)
-        aCoder.encode(cardfronts, forKey: PropertyKey.cardfronts)
-        aCoder.encode(cardbacks, forKey: PropertyKey.cardbacks)
+        aCoder.encode(name, forKey: PropertyKey.nameKey)
+        //aCoder.encode(cards, forKey: "cards")
+        aCoder.encode(cards, forKey: PropertyKey.cardsKey)// as! [Card]
+        aCoder.encode(cardfronts, forKey: PropertyKey.cardfrontsKey)
+        aCoder.encode(cardbacks, forKey: PropertyKey.cardbacksKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+        
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as? String else {
             os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
             return nil
         }
         
-        let cards = aDecoder.decodeObject(forKey: PropertyKey.cards) as? [Card]
+        let cards = aDecoder.decodeObject(forKey: PropertyKey.cardsKey) as? [Card]
         
-        let cardfronts = aDecoder.decodeObject(forKey: PropertyKey.cardfronts) as? [String]
+        let cardfronts = aDecoder.decodeObject(forKey: PropertyKey.cardfrontsKey) as? [String]
         
-        let cardbacks = aDecoder.decodeObject(forKey: PropertyKey.cardbacks) as? [String]
-        
+        let cardbacks = aDecoder.decodeObject(forKey: PropertyKey.cardbacksKey) as? [String]
+ 
         self.init(name: name, cards: cards!, cardfronts: cardfronts!, cardbacks: cardbacks!)
     }
     
