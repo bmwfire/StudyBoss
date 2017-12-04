@@ -23,7 +23,7 @@ class SecondViewController: UIViewController {
         //Initialize Notification Prompt at startup
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         
-        //Create DatePicker and Install Clock Notification
+        //Create DatePicker
         createDatePicker()
     }
     
@@ -60,6 +60,13 @@ class SecondViewController: UIViewController {
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
         
+        //clockNotification()
+    }
+    
+    //MARK: Button Toggle
+    @IBAction func thirtyMin(_ sender: UIButton) {
+        
+        //Call the Clock Notification
         clockNotification()
     }
     
@@ -81,6 +88,15 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        //sleep(time)
+        
+        //Call Timed Notification
+        timedNotification(inSeconds: 10) { (success) in
+            if success {
+                print("Successfully Notified")
+            }
+        }
     }
     
     //MARK: Notification Frequency
@@ -95,24 +111,7 @@ class SecondViewController: UIViewController {
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if error != nil {
-                completion(false)
-            } else {
-                completion(true)
-            }
-        }
-    }
-    
-    //MARK: Button Toggle
-    @IBAction func thirtyMin(_ sender: UIButton) {
-        
-        //Call Timed Notification
-        timedNotification(inSeconds: 3) { (success) in
-            if success {
-                print("Successfully Notified")
-            }
-        }
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
 
