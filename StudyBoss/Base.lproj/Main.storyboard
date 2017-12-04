@@ -36,6 +36,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="uCC-3P-TBA" id="Mkd-6E-8TU"/>
+                                    <segue destination="TFu-Mp-rQI" kind="show" identifier="ShowDetail" id="VsE-d1-8lA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -273,7 +274,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Deck" id="1oF-Wg-edX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87">
+                            <connections>
+                                <action selector="cancel:" destination="TFu-Mp-rQI" id="ZcK-fm-MeA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="46k-k5-OnV" customClass="saveButton">
                             <connections>
                                 <segue destination="Xc7-BC-XRK" kind="unwind" unwindAction="unwindToDeckListWithSender:" id="QrP-Ud-Sh7"/>
@@ -329,7 +334,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g3-h4-0T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-110"/>
+            <point key="canvasLocation" x="401" y="-482"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RUm-G3-m2p">
@@ -355,4 +360,7 @@
         <image name="Decks" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VsE-d1-8lA"/>
+    </inferredMetricsTieBreakers>
 </document>
