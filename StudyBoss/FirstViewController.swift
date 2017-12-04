@@ -33,7 +33,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: Private Methods
     private func loadSampleCards(){
-        guard let card1 = Card(front: "Front of the Card2", back: "Back of the Card") else{
+        guard let card1 = Card(front: "Front of the Card re", back: "Back of the Card") else{
             fatalError("Unable to instantiate card1")
         }
         
@@ -61,7 +61,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //MARK: Actions
     
     @IBAction func addData2(_ sender: Any) {
-        guard let newCard1 = Card(front: "3", back: "2") else{
+        guard let newCard1 = Card(front: "4", back: "2") else{
             fatalError("Unable to instantiate newCard1")
         }
         cards += [newCard1]
@@ -93,10 +93,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
  */
     //MARK: Navigation
-    @IBOutlet weak var cancel: UIBarButtonItem!
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddDeckMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddDeckMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The MealViewController is not inside a navigation controller.")
+        }
     }
+    
+    /*
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+     }
+ */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -111,7 +125,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cardfronts = fronts
         let cardbacks = backs
         
-        deck = Deck(name: name, cards: cards, cardfronts: fronts, cardbacks: backs)
+        deck = Deck(name: name, cards: cards, cardfronts: cardfronts, cardbacks: cardbacks)
         //TODO above line may be incorrect
     }
     
@@ -127,13 +141,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //IF EDITING EXISTING DECK THEN DO FOLLOWING
         if let deck = deck {
             navigationItem.title = deck.name
+            nameTextField.text = deck.name
             backs = deck.cardbacks
             fronts = deck.cardfronts
             cards = deck.cards
         }
         
-        updateSaveButtonState()
+        
         loadSampleCards();
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {

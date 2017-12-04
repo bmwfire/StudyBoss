@@ -25,15 +25,28 @@ class DeckTableViewController:
             loadSampleDecks()
         }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
-        
+        loadSampleDecks()
         // Load the sample data.
     }
     //Mark: Private Methods
 
     private func loadSampleDecks(){
+        let front1 = "front"
+        let back1 = "back"
+        guard let card1 = Card(front: front1, back: back1)else {
+            fatalError("Unable to instantiate samplecard1")
+        }
+        let cards1 = [card1]
+ 
+        let fronts1 = [front1]
+        let backs1 = [back1]
+        
+        guard let deck0 = Deck(name: "test0", cards: cards1, cardfronts: fronts1, cardbacks: backs1)else{
+            fatalError("Unable to instantiate deck0")
+        }
         /* TODO make proper sample decks
         guard let deck1 = Deck(name: "Test1") else{
-            fatalError("Unable to instantiate deck1")
+            fatalError("Unable to instantiate deck1")s
         }
         guard let deck2 = Deck(name: "Test2") else{
             fatalError("Unable to instantiate deck2")
@@ -43,6 +56,7 @@ class DeckTableViewController:
         }
  
         decks += [deck1, deck2, deck3]*/
+        decks += [deck0]
     }
     
     private func saveDecks() {
@@ -175,7 +189,7 @@ class DeckTableViewController:
             let selectedDeck = decks[indexPath.row]
             deckDetailViewController.deck = selectedDeck
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "AddItem","ShowDetail")")
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
  

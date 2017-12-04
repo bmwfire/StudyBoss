@@ -274,7 +274,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Deck" id="1oF-Wg-edX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rr7-1c-K87">
+                            <connections>
+                                <action selector="cancel:" destination="TFu-Mp-rQI" id="ZcK-fm-MeA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="46k-k5-OnV" customClass="saveButton">
                             <connections>
                                 <segue destination="Xc7-BC-XRK" kind="unwind" unwindAction="unwindToDeckListWithSender:" id="QrP-Ud-Sh7"/>
@@ -284,7 +288,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="CardTableView" destination="Pfj-p9-4S7" id="h8y-f4-sNE"/>
-                        <outlet property="cancel" destination="Rr7-1c-K87" id="KD2-KQ-h3S"/>
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="nameTextField" destination="jfs-RY-eFM" id="km5-9L-win"/>
                         <outlet property="saveButton" destination="46k-k5-OnV" id="5cT-Tw-UPz"/>

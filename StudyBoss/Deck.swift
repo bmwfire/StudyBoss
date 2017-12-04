@@ -29,6 +29,9 @@ class Deck: NSObject, NSCoding{
             return nil
         }
         self.name = name
+        self.cards = cards
+        self.cardfronts = cardfronts
+        self.cardbacks = cardbacks
     }
     //Mark: Types
     struct PropertyKey {
