@@ -23,7 +23,6 @@ class CardTableView: UITableView {
     
     let cellReuseIdentifier = "cell"
     
-    
     //MARK: Private Methods
     private func loadSampleCards(){
         guard let card1 = Card(front: "Front of the Card", back: "Back of the Card") else{

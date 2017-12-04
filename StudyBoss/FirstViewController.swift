@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //MARK: Properties
     
@@ -42,6 +42,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
+        fronts = [String]()
+        backs = [String]()
+        for i in 0 ..< cards.count{
+            fronts.append(cards[i].front)
+            backs.append(cards[i].back)
+        }
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
@@ -52,6 +58,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         deckNameLabel.text = nameTextField.text
+        
         updateSaveButtonState()
         navigationItem.title = textField.text
     }
@@ -146,16 +153,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self as UITableViewDataSource
         //IF EDITING EXISTING DECK THEN DO FOLLOWING
+        //For setting up an existing deck variables
         if let deck = deck {
             navigationItem.title = deck.name
             nameTextField.text = deck.name
             backs = deck.cardbacks
             fronts = deck.cardfronts
             cards = deck.cards
+        }else{
+            loadSampleCards();
         }
         
-        
-        loadSampleCards();
         updateSaveButtonState()
     }
 
