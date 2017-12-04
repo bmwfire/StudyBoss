@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
     //MARK: Properties
     
@@ -33,7 +33,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: Private Methods
     private func loadSampleCards(){
-        guard let card1 = Card(front: "Front of the Card re", back: "Back of the Card") else{
+        guard let card1 = Card(front: "Front of the Card ree", back: "Back of the Card") else{
             fatalError("Unable to instantiate card1")
         }
         
@@ -97,6 +97,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let isPresentingInAddDeckMode = presentingViewController is UINavigationController
         
         if isPresentingInAddDeckMode {
+            /*
+            if let owningNavigationController1 = navigationController{
+                owningNavigationController1.popViewController(animated: true)
+            }*/
             dismiss(animated: true, completion: nil)
         }
         else if let owningNavigationController = navigationController{
