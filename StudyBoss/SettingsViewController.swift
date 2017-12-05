@@ -47,7 +47,7 @@ class SecondViewController: UIViewController {
         datePicker.datePickerMode = .time
     }
     
-    //Done Button
+    //MARK: Done Button
     @objc func donePressed() {
         
         //format time
@@ -63,15 +63,10 @@ class SecondViewController: UIViewController {
         //clockNotification()
     }
     
-    //MARK: Button Toggle
-    @IBAction func thirtyMin(_ sender: UIButton) {
-        
-        //Call the Clock Notification
-        clockNotification()
-    }
+    //typealias FinishedDownload = () -> ()
     
-    //Function that notifies the user at specified time set.
-    func clockNotification() {
+    //MARK: Clock Notification Function
+    func clockNotification(/*closure: () -> ()*/) {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -80,7 +75,7 @@ class SecondViewController: UIViewController {
         
         //Notify user based on time-set
         let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz!"
+        content.title = "Please conduct one quiz Clock!"
         content.badge = 1
         
         //Set notification at clock time
@@ -89,15 +84,22 @@ class SecondViewController: UIViewController {
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        //sleep(time)
+       /* let when = DispatchTime.now() + 5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+         
+        }*/
         
+        //completed()
+    }
+    
+    /*clockNotification { () -> () in
         //Call Timed Notification
         timedNotification(inSeconds: 10) { (success) in
             if success {
-                print("Successfully Notified")
+            print("Successfully Notified")
             }
         }
-    }
+    }*/
     
     //MARK: Notification Frequency
     func timedNotification(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()) {
@@ -106,12 +108,26 @@ class SecondViewController: UIViewController {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
         
         let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz!"
+        content.title = "Please conduct one quiz Freq!"
         content.badge = 1
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    //MARK: Button Toggle
+    @IBAction func thirtyMin(_ sender: UIButton) {
+        
+        //Call the Clock Notification
+        clockNotification()
+        
+        //Call Timed Notification
+        timedNotification(inSeconds: 10) { (success) in
+            if success {
+                print("Successfully Notified")
+            }
+        }
     }
 }
 
