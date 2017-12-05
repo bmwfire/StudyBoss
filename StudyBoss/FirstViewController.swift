@@ -85,8 +85,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Disable the Save button while editing.
         saveButton.isEnabled = false
     }
+    
     //MARK: Actions
     
+    @IBAction func ViewCards(_ sender: UIButton) {
+        /*
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "flipViewController") as! FlipViewController
+        myVC.frontsFlip = fronts
+        myVC.backsFlip = backs
+        navigationController?.pushViewController(myVC, animated: true)
+ */
+    }
     @IBAction func addData2(_ sender: Any) {
         /*
         let frontAdd = "Front AddCard"
@@ -198,22 +207,34 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func cancel(_ sender: UIBarButtonItem) {
      }
  */
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         super.prepare(for: segue, sender: sender)
-        
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+        if(segue.identifier == "toFlip"){
+            if let vc = segue.destination as? FlipViewController{
+                let cardfronts = self.fronts
+                let cardbacks = self.backs
+                vc.frontsFlip = cardfronts
+                vc.backsFlip = cardbacks
+            }
+            
+            
+        }else{
+            // Configure the destination view controller only when the save button is pressed.
+            guard let button = sender as? UIBarButtonItem, button === saveButton else {
+                os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+                return
+            }
+            
+            let name = nameTextField.text ?? ""
+            let cards = self.cards
+            let cardfronts = fronts
+            let cardbacks = backs
+            
+            deck = Deck(name: name, cards: cards, cardfronts: cardfronts, cardbacks: cardbacks)
+            //TODO above line may be incorrect
         }
-        
-        let name = nameTextField.text ?? ""
-        let cards = self.cards
-        let cardfronts = fronts
-        let cardbacks = backs
-        
-        deck = Deck(name: name, cards: cards, cardfronts: cardfronts, cardbacks: cardbacks)
-        //TODO above line may be incorrect
     }
     
     override func viewDidLoad() {
