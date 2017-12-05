@@ -311,6 +311,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ViewCardsBtn" destination="ky1-Hu-1Xo" id="hbp-nj-avr"/>
                         <outlet property="backTextField" destination="CTt-nN-u0k" id="gde-Qf-ZiK"/>
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="frontTextField" destination="5FZ-MG-bOY" id="PoN-h7-SBt"/>
@@ -447,7 +448,7 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X2V-mx-Myy"/>
+        <segue reference="ltf-HS-aOJ"/>
         <segue reference="VsE-d1-8lA"/>
     </inferredMetricsTieBreakers>
 </document>
