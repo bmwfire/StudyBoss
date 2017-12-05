@@ -63,10 +63,8 @@ class SecondViewController: UIViewController {
         //clockNotification()
     }
     
-    //typealias FinishedDownload = () -> ()
-    
     //MARK: Clock Notification Function
-    func clockNotification(/*closure: () -> ()*/) {
+    func clockNotification() {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -83,26 +81,10 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-       /* let when = DispatchTime.now() + 5
-        DispatchQueue.main.asyncAfter(deadline: when) {
-         
-        }*/
-        
-        //completed()
     }
     
-    /*clockNotification { () -> () in
-        //Call Timed Notification
-        timedNotification(inSeconds: 10) { (success) in
-            if success {
-            print("Successfully Notified")
-            }
-        }
-    }*/
-    
     //MARK: Notification Frequency
-    func timedNotification(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()) {
+    func timedNotification(inSeconds: TimeInterval) {
         
         //Set Trigger and Content for buttons
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
@@ -123,11 +105,7 @@ class SecondViewController: UIViewController {
         clockNotification()
         
         //Call Timed Notification
-        timedNotification(inSeconds: 10) { (success) in
-            if success {
-                print("Successfully Notified")
-            }
-        }
+        timedNotification(inSeconds: 10)
     }
 }
 
