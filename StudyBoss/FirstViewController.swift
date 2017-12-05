@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //MARK: Properties
     
@@ -19,21 +19,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var deckNameLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var CardTableView: UITableView!
-    @IBOutlet weak var AddButton: UIButton!
+    
     
     var deck: Deck?
     var cards = [Card]()
-    var backs: [String] = ["Back of the Card2"]
-    var fronts: [String] = ["Front of the Card2"]
+    var backs = [String]()// = ["Back of the Card2"]
+    var fronts = [String]()// = ["Front of the Card2"]
     let cellReuseIdentifier = "cell"
-    @IBOutlet weak var tableView: CardTableView!
     
+    @IBOutlet weak var tableView: CardTableView!
     
     
     //MARK: Private Methods
     private func loadSampleCards(){
-        guard let card1 = Card(front: "Front of the Card ree", back: "Back of the Card") else{
+        guard let card1 = Card(front: "Front loadSampleCards", back: "Back loadSampleCards") else{
             fatalError("Unable to instantiate card1")
         }
         
@@ -41,6 +40,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
+        //cards = tableView.cards
+        fronts = [String]()
+        backs = [String]()
+        for i in 0 ..< cards.count{
+            fronts.append(cards[i].front)
+            backs.append(cards[i].back)
+        }
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
@@ -51,6 +57,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         deckNameLabel.text = nameTextField.text
+        
         updateSaveButtonState()
         navigationItem.title = textField.text
     }
@@ -61,7 +68,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //MARK: Actions
     
     @IBAction func addData2(_ sender: Any) {
-        guard let newCard1 = Card(front: "4", back: "2") else{
+        guard let newCard1 = Card(front: "Front AddCard", back: "Back AddCard") else{
             fatalError("Unable to instantiate newCard1")
         }
         cards += [newCard1]
@@ -104,10 +111,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             dismiss(animated: true, completion: nil)
         }
         else if let owningNavigationController = navigationController{
+            //TODO the dismiss functin may not suppose to be there
+            dismiss(animated: true, completion: nil)
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("The MealViewController is not inside a navigation controller.")
+            fatalError("The DeckViewController is not inside a navigation controller.")
         }
     }
     
@@ -139,20 +148,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //nameTextField.delegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
 
-        nameTextField.delegate = self as? UITextFieldDelegate
+        nameTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self as UITableViewDataSource
         //IF EDITING EXISTING DECK THEN DO FOLLOWING
+        //For setting up an existing deck variables
         if let deck = deck {
             navigationItem.title = deck.name
             nameTextField.text = deck.name
             backs = deck.cardbacks
             fronts = deck.cardfronts
             cards = deck.cards
+        }else{
+            loadSampleCards();
         }
         
-        
-        loadSampleCards();
         updateSaveButtonState()
     }
 
@@ -187,7 +197,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             fatalError("The dequeued cell is not an instance of CardTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate card for the data source layout.
         let card = cards[indexPath.row]
         
         cell.Front.text = card.front

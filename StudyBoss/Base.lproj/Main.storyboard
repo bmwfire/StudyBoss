@@ -188,7 +188,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-p9-4S7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-p9-4S7" customClass="CardTableView" customModule="StudyBoss" customModuleProvider="target">
                                 <rect key="frame" x="16" y="198.5" width="343" height="356"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -287,11 +287,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="CardTableView" destination="Pfj-p9-4S7" id="h8y-f4-sNE"/>
                         <outlet property="deckNameLabel" destination="JDu-32-eCf" id="mzz-tu-6Qe"/>
                         <outlet property="nameTextField" destination="jfs-RY-eFM" id="km5-9L-win"/>
                         <outlet property="saveButton" destination="46k-k5-OnV" id="5cT-Tw-UPz"/>
-                        <outlet property="tableView" destination="Pfj-p9-4S7" id="Dzp-o3-6u5"/>
+                        <outlet property="tableView" destination="Pfj-p9-4S7" id="eoi-f2-0vC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
