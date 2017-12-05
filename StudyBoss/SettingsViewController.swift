@@ -16,7 +16,7 @@ class SecondViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     
-    var frequency : ((_ inSeconds: TimeInterval) -> ())?
+    //var frequency : ((_ inSeconds: TimeInterval) -> ())?
     
     //MARK: Initialization
     override func viewDidLoad() {
@@ -66,7 +66,7 @@ class SecondViewController: UIViewController {
     }
     
     //MARK: Clock Notification Function
-    func clockNotification() {
+    func clockNotification(closure: (TimeInterval) -> ()) {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -83,22 +83,9 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        //Notification Frequency
-        frequency = { (inSeconds: TimeInterval) in
-            
-            //Set Trigger and Content for buttons
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
-            
-            let content = UNMutableNotificationContent()
-            content.title = "Please conduct one quiz Freq!"
-            content.badge = 1
-            
-            let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        }
     }
+    
+    
     
     /*func timedNotification(inSeconds: TimeInterval) {
         
@@ -117,10 +104,11 @@ class SecondViewController: UIViewController {
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        clockNotification()
-        
-        //Call the Frequency Closure
-        frequency?(10)
+        clockNotification(closure: {
+            
+            //Notification Frequency
+            
+        })
     }
 }
 
