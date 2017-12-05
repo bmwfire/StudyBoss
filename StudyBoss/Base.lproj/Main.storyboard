@@ -332,9 +332,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83v-ll-ezi">
-                                <rect key="frame" x="164" y="321" width="46" height="15"/>
+                                <rect key="frame" x="39" y="152" width="297" height="433"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.15972297272189928" green="1" blue="0.92446579099740811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Front"/>
+                                <connections>
+                                    <action selector="Flip:" destination="esi-n4-r6r" eventType="touchUpInside" id="z3b-qx-S1O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -352,6 +356,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Button" destination="83v-ll-ezi" id="Uj9-K6-Bo4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXt-SK-4KS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
