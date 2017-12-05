@@ -12,9 +12,11 @@ class Card: NSObject{
     var back: String
     //MARK: Initialization
     init?(front: String, back: String) {
+        /*
         if (front.isEmpty || back.isEmpty){
             return nil
         }
+    */
         self.front = front
         self.back = back
         super.init()
