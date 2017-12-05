@@ -210,14 +210,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        super.prepare(for: segue, sender: sender)
+        //super.prepare(for: segue, sender: sender)
         if(segue.identifier == "toFlip"){
-            if let vc = segue.destination as? FlipViewController{
-                let cardfronts = self.fronts
-                let cardbacks = self.backs
-                vc.frontsFlip = cardfronts
-                vc.backsFlip = cardbacks
+            if let nav_vc = segue.destination as? UINavigationController{
+                if let vc = nav_vc.topViewController as? FlipViewController{
+                    let cardfronts = self.fronts
+                    let cardbacks = self.backs
+                    vc.frontsFlip = cardfronts
+                    vc.backsFlip = cardbacks
+                }
+                
             }
+            
+            
             
             
         }else{

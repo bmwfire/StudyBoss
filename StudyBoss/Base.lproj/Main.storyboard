@@ -354,7 +354,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="5co-iw-0Bh">
                             <connections>
                                 <action selector="Next:" destination="esi-n4-r6r" id="FQh-SY-PJl"/>
-                                <segue destination="ar1-N4-WL4" kind="show" action="showDetailViewController:sender:" id="X2V-mx-Myy"/>
+                                <segue destination="ar1-N4-WL4" kind="show" identifier="ContinueFlip" action="showDetailViewController:sender:" id="X2V-mx-Myy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -447,7 +447,7 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ltf-HS-aOJ"/>
+        <segue reference="X2V-mx-Myy"/>
         <segue reference="VsE-d1-8lA"/>
     </inferredMetricsTieBreakers>
 </document>
