@@ -9,6 +9,28 @@
 import UIKit
 import os.log
 
+//MARK: Extensions
+extension MutableCollection {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let i = index(firstUnshuffled, offsetBy: d)
+            swapAt(firstUnshuffled, i)
+        }
+    }
+}
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
+    }
+}
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDataSourcePrefetching {
     
     //MARK: Properties
@@ -22,6 +44,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var backTextField: UITextField!
     @IBOutlet weak var frontTextField: UITextField!
+    
+    @IBOutlet weak var ViewCardsBtn: UIButton!
     weak open var prefetchDataSource: UITableViewDataSourcePrefetching?
     //[self.customCollectionView setPrefetchingEnabled:NO]
     var cells = [CardTableViewCell]()
@@ -85,8 +109,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Disable the Save button while editing.
         saveButton.isEnabled = false
     }
+    
     //MARK: Actions
     
+    @IBAction func ViewCards(_ sender: UIButton) {
+        /*
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "flipViewController") as! FlipViewController
+        myVC.frontsFlip = fronts
+        myVC.backsFlip = backs
+        navigationController?.pushViewController(myVC, animated: true)
+ */
+    }
     @IBAction func addData2(_ sender: Any) {
         /*
         let frontAdd = "Front AddCard"
@@ -107,6 +140,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fronts.append(frontAdd!)
         backs.append(backAdd!)
         cards += [newCard1]
+        updateViewCards()
         tableView.reloadData()
     }
 
@@ -146,6 +180,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         updateCardView()
     }
  */
+    func updateViewCards(){
+        if(fronts.count == 0){
+            ViewCardsBtn.isEnabled = false
+        }else{
+            ViewCardsBtn.isEnabled = true
+        }
+    }
     func updateCardView(){
         /*
          let index = IndexPath(row: 0, section: 0)
@@ -160,6 +201,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             fronts.append(cards[i].front)
             backs.append(cards[i].back)
         }
+        updateViewCards()
         /*
         //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:<requiredIndexPath>]
         for i in 0 ..< cards.count{
@@ -198,22 +240,44 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func cancel(_ sender: UIBarButtonItem) {
      }
  */
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+        //super.prepare(for: segue, sender: sender)
+        if(segue.identifier == "toFlip"){
+            if let nav_vc = segue.destination as? UINavigationController{
+                if let vc = nav_vc.topViewController as? FlipViewController{
+                    let cardfronts = self.fronts
+                    let cardbacks = self.backs
+                    
+                    let shuffled_indices = cardfronts.indices.shuffled()
+                    
+                    let shuffledCardFronts = shuffled_indices.map { cardfronts[$0]}
+                    let shuffledCardBacks = shuffled_indices.map { cardbacks[$0]}
+                    vc.frontsFlip = shuffledCardFronts
+                    vc.backsFlip = shuffledCardBacks
+                }
+                
+            }
+            
+            
+            
+            
+        }else{
+            // Configure the destination view controller only when the save button is pressed.
+            guard let button = sender as? UIBarButtonItem, button === saveButton else {
+                os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+                return
+            }
+            
+            let name = nameTextField.text ?? ""
+            let cards = self.cards
+            let cardfronts = fronts
+            let cardbacks = backs
+            
+            deck = Deck(name: name, cards: cards, cardfronts: cardfronts, cardbacks: cardbacks)
+            //TODO above line may be incorrect
         }
-        
-        let name = nameTextField.text ?? ""
-        let cards = self.cards
-        let cardfronts = fronts
-        let cardbacks = backs
-        
-        deck = Deck(name: name, cards: cards, cardfronts: cardfronts, cardbacks: cardbacks)
-        //TODO above line may be incorrect
     }
     
     override func viewDidLoad() {
@@ -236,7 +300,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             loadSampleCards();
         }
-        
+        updateViewCards()
         updateSaveButtonState()
     }
 
@@ -329,6 +393,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    
+
 
 }
 
