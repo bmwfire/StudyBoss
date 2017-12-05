@@ -155,11 +155,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
          */
         fronts = [String]()
         backs = [String]()
+        
         for i in 0 ..< cards.count{
             fronts.append(cards[i].front)
             backs.append(cards[i].back)
         }
-        
+        /*
         //UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:<requiredIndexPath>]
         for i in 0 ..< cards.count{
             let index = IndexPath(row: i, section: 0)
@@ -171,6 +172,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
  
         tableView.reloadData()
+ */
     }
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         let isPresentingInAddDeckMode = presentingViewController is UINavigationController
@@ -320,7 +322,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             // Delete the row from the data source
             cards.remove(at: indexPath.row)
             //saveCards()
-            //updateCardView()
+            updateCardView()
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else if editingStyle == .insert {
