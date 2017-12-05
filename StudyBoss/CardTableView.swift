@@ -17,12 +17,21 @@ class CardTableView: UITableView {
         // Drawing code
     }
     */
-    let backs: [String] = ["Back of the Card1"]
-    let front: [String] = ["Front of the Card1"]
+    let backs: [String] = ["front CardTableView"]
+    let front: [String] = ["back CardTableView"]
     var cards = [Card]()
     
     let cellReuseIdentifier = "cell"
     
+    func viewDidLoad() {
+        //super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        //nameTextField.delegate = self
+        //loadSampleCards();
+        
+        //UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+    }
+    /*
     //MARK: Private Methods
     private func loadSampleCards(){
         guard let card1 = Card(front: "Front of the Card", back: "Back of the Card") else{
@@ -68,6 +77,6 @@ class CardTableView: UITableView {
         cell.Back.text = card.back
         return cell
     }
-    
+    */
 
 }

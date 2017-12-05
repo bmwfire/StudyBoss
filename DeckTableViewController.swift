@@ -31,8 +31,8 @@ class DeckTableViewController:
     //Mark: Private Methods
 
     private func loadSampleDecks(){
-        let front1 = "front"
-        let back1 = "back"
+        let front1 = "front from loadSampleDecks"
+        let back1 = "back from loadSampleDecks"
         guard let card1 = Card(front: front1, back: back1)else {
             fatalError("Unable to instantiate samplecard1")
         }
