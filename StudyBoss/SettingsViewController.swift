@@ -16,6 +16,8 @@ class SecondViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     
+    var frequency : ((_ inSeconds: TimeInterval) -> ())?
+    
     //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,10 +83,24 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        //Notification Frequency
+        frequency = { (inSeconds: TimeInterval) in
+            
+            //Set Trigger and Content for buttons
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Please conduct one quiz Freq!"
+            content.badge = 1
+            
+            let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
     }
     
-    //MARK: Notification Frequency
-    func timedNotification(inSeconds: TimeInterval) {
+    /*func timedNotification(inSeconds: TimeInterval) {
         
         //Set Trigger and Content for buttons
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
@@ -96,16 +112,15 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
+    }*/
     
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        //Call the Clock Notification
         clockNotification()
         
-        //Call Timed Notification
-        timedNotification(inSeconds: 10)
+        //Call the Frequency Closure
+        frequency?(10)
     }
 }
 
