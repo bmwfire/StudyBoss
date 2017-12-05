@@ -104,10 +104,24 @@ class SecondViewController: UIViewController {
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        clockNotification(closure: {
+        let inSeconds = 10
+        
+        clockNotification(closure: {_ in
             
             //Notification Frequency
-            
+            //(inSeconds: TimeInterval) {
+                
+                //Set Trigger and Content for buttons
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(inSeconds), repeats: false)
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Please conduct one quiz Freq!"
+                content.badge = 1
+                
+                let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            //}
         })
     }
 }
