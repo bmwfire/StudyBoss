@@ -16,8 +16,6 @@ class SecondViewController: UIViewController {
     
     let datePicker = UIDatePicker()
     
-    //var frequency : ((_ inSeconds: TimeInterval) -> ())?
-    
     //MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +59,10 @@ class SecondViewController: UIViewController {
         
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
-        
-        //clockNotification()
     }
     
     //MARK: Clock Notification Function
-    func clockNotification(closure: (TimeInterval) -> ()) {
+    func clockNotification(closure: () -> ()) {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -104,24 +100,19 @@ class SecondViewController: UIViewController {
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        let inSeconds = 10
-        
-        clockNotification(closure: {_ in
+        clockNotification(closure: {
             
             //Notification Frequency
-            //(inSeconds: TimeInterval) {
                 
-                //Set Trigger and Content for buttons
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(inSeconds), repeats: false)
+            let content = UNMutableNotificationContent()
+            content.title = "Please conduct one quiz Freq!"
+            content.badge = 1
+            
+            //Set Trigger and Content for buttons
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
                 
-                let content = UNMutableNotificationContent()
-                content.title = "Please conduct one quiz Freq!"
-                content.badge = 1
-                
-                let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
-                
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            //}
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         })
     }
 }
