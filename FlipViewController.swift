@@ -18,7 +18,7 @@ class FlipViewController: UIViewController {
     var front: String!
     var back: String!
     var count: Int!
-    //TEST
+    //TEST it
     override func viewDidLoad() {
         isOpen = false
         if(count == nil){
