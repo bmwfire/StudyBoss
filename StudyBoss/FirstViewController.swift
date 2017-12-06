@@ -54,6 +54,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var backs = [String]()// = ["Back of the Card2"]
     var fronts = [String]()// = ["Front of the Card2"]
     let cellReuseIdentifier = "cell"
+    var editingDeck: Bool?
     
     @IBOutlet weak var tableView: CardTableView!
     
@@ -184,7 +185,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if(fronts.count == 0){
             ViewCardsBtn.isEnabled = false
         }else{
-            ViewCardsBtn.isEnabled = true
+            if(editingDeck == true){
+                ViewCardsBtn.isEnabled = true
+            }
         }
     }
     func updateCardView(){
@@ -297,8 +300,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             backs = deck.cardbacks
             fronts = deck.cardfronts
             cards = deck.cards
+            editingDeck = true
         }else{
-            loadSampleCards();
+            ViewCardsBtn.isEnabled = false
+            editingDeck = false
+            //loadSampleCards();
         }
         updateViewCards()
         updateSaveButtonState()

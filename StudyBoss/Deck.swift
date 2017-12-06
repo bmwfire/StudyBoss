@@ -45,7 +45,7 @@ class Deck: NSObject, NSCoding{
     //Mark: NSCoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.nameKey)
-        //aCoder.encode(cards, forKey: "cards")
+        //aCoder.encode(cards, forKey: PropertyKey.cardsKey)
         aCoder.encode(cards, forKey: PropertyKey.cardsKey)// as! [Card]
         aCoder.encode(cardfronts, forKey: PropertyKey.cardfrontsKey)
         aCoder.encode(cardbacks, forKey: PropertyKey.cardbacksKey)

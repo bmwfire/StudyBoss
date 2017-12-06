@@ -21,6 +21,7 @@ class FlipViewController: UIViewController {
     //TEST
     override func viewDidLoad() {
         isOpen = false
+        Button.backgroundColor = UIColor.cyan
         if(count == nil){
             count = 0
         }
@@ -95,10 +96,12 @@ class FlipViewController: UIViewController {
         if isOpen{
             isOpen = false
             Button.setTitle(front, for: .normal)
+            Button.backgroundColor = UIColor.cyan
             UIView.transition(with: Button, duration: 0.3, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: nil, completion: nil)
         }else{
             isOpen = true
             Button.setTitle(back, for: .normal)
+            Button.backgroundColor = UIColor.green
             UIView.transition(with: Button, duration: 0.3, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: nil, completion: nil)
         }
     }

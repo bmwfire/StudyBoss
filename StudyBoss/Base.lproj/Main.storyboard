@@ -174,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Deck Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jfs-RY-eFM" customClass="nameTextField">
-                                <rect key="frame" x="16" y="122.5" width="233" height="30"/>
+                                <rect key="frame" x="16" y="102" width="128.5" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -184,7 +184,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deck Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-32-eCf" customClass="deckNameLabel">
-                                <rect key="frame" x="257" y="127" width="150" height="20.5"/>
+                                <rect key="frame" x="152.5" y="107" width="89" height="20.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -233,6 +233,11 @@
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.58474787233946202" green="0.97994251943005184" blue="0.78148936570388128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="tableview.layer.borderColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Back" destination="UZ5-p2-ud9" id="J1g-gF-7W2"/>
@@ -246,7 +251,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-Gu-cvc">
-                                <rect key="frame" x="25" y="218" width="130" height="30"/>
+                                <rect key="frame" x="25" y="218" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Card"/>
@@ -255,35 +260,35 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Front of the Card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5FZ-MG-bOY">
-                                <rect key="frame" x="16" y="154" width="233" height="30"/>
+                                <rect key="frame" x="16" y="154" width="131.5" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Back of the Card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTt-nN-u0k">
-                                <rect key="frame" x="16" y="181" width="233" height="30"/>
+                                <rect key="frame" x="16" y="181" width="132" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhy-oA-Pe2">
-                                <rect key="frame" x="257" y="154" width="41" height="21"/>
+                                <rect key="frame" x="155.5" y="159" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWh-9A-r4L">
-                                <rect key="frame" x="256" y="186" width="38" height="21"/>
+                                <rect key="frame" x="153.5" y="186" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky1-Hu-1Xo">
-                                <rect key="frame" x="210" y="219" width="78" height="29"/>
+                                <rect key="frame" x="208" y="219" width="78" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Cards"/>
                                 <connections>
@@ -323,7 +328,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkc-0c-LxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xc7-BC-XRK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="-214"/>
+            <point key="canvasLocation" x="1293.5999999999999" y="-214.54272863568218"/>
         </scene>
         <!--Flip View Controller-->
         <scene sceneID="dMx-5Z-Ez4">
@@ -333,17 +338,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83v-ll-ezi">
-                                <rect key="frame" x="39" y="152" width="297" height="433"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83v-ll-ezi">
+                                <rect key="frame" x="39" y="152" width="297" height="384"/>
                                 <color key="backgroundColor" red="0.15972297272189928" green="1" blue="0.92446579099740811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Front"/>
+                                <state key="normal" title="Front">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="Flip:" destination="esi-n4-r6r" eventType="touchUpInside" id="z3b-qx-S1O"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="83v-ll-ezi" firstAttribute="leading" secondItem="eTE-Zy-HZU" secondAttribute="leading" constant="39" id="99k-1L-MYY"/>
+                            <constraint firstItem="83v-ll-ezi" firstAttribute="top" secondItem="eTE-Zy-HZU" secondAttribute="top" constant="88" id="O3F-Tz-AQ3"/>
+                            <constraint firstItem="eTE-Zy-HZU" firstAttribute="trailing" secondItem="83v-ll-ezi" secondAttribute="trailing" constant="39" id="QWX-Mo-zbf"/>
+                            <constraint firstItem="eTE-Zy-HZU" firstAttribute="bottom" secondItem="83v-ll-ezi" secondAttribute="bottom" constant="82" id="lnv-j7-qLr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eTE-Zy-HZU"/>
                     </view>
                     <navigationItem key="navigationItem" id="wpO-E3-0Nd">

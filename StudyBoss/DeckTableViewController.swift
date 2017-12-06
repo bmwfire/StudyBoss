@@ -25,23 +25,32 @@ class DeckTableViewController:
             loadSampleDecks()
         }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
-        loadSampleDecks()
         // Load the sample data.
     }
     //Mark: Private Methods
 
     private func loadSampleDecks(){
-        let front1 = "front from loadSampleDecks"
-        let back1 = "back from loadSampleDecks"
+        let front1 = "What is 1 + 1?"
+        let back1 = "2"
+        let front2 = "What is 3 * 5?"
+        let back2 = "15"
+        let front3 = "What is 6 - 9?"
+        let back3 = "-3"
         guard let card1 = Card(front: front1, back: back1)else {
             fatalError("Unable to instantiate samplecard1")
         }
-        let cards1 = [card1]
+        guard let card2 = Card(front: front2, back: back2)else {
+            fatalError("Unable to instantiate samplecard1")
+        }
+        guard let card3 = Card(front: front3, back: back3)else {
+            fatalError("Unable to instantiate samplecard1")
+        }
+        let cards1 = [card1, card2, card3]
  
-        let fronts1 = [front1]
-        let backs1 = [back1]
+        let fronts1 = [front1, front2, front3]
+        let backs1 = [back1, back2, back3]
         
-        guard let deck0 = Deck(name: "test0", cards: cards1, cardfronts: fronts1, cardbacks: backs1)else{
+        guard let deck0 = Deck(name: "Arithmetic", cards: cards1, cardfronts: fronts1, cardbacks: backs1)else{
             fatalError("Unable to instantiate deck0")
         }
         /*
@@ -61,14 +70,14 @@ class DeckTableViewController:
     
     private func saveDecks() {
         
-        /* TODO FIX THIS
+        /*
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(decks, toFile: Deck.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Decks successfully saved.", log: OSLog.default, type: .debug)
         } else {
             os_log("Failed to save decks...", log: OSLog.default, type: .error)
         }
- */
+        */
     }
     
     @IBAction func unwindToDeckList(sender: UIStoryboardSegue) {
