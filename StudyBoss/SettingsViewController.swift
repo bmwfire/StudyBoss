@@ -59,10 +59,12 @@ class SecondViewController: UIViewController {
         
         datePickerTxt.text = "\(dateString)"
         self.view.endEditing(true)
+        
+        clockNotification()
     }
     
     //MARK: Clock Notification Function
-    func clockNotification(closure: () -> ()) {
+    func clockNotification() {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
         var time = DateComponents()
@@ -71,7 +73,7 @@ class SecondViewController: UIViewController {
         
         //Notify user based on time-set
         let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz Clock!"
+        content.title = "Please conduct one quiz!" //For Clock
         content.badge = 1
         
         //Set notification at clock time
@@ -79,31 +81,44 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        //Timer.init(fireAt: datePicker.date, interval: 1, target: self, selector: #selector(timedNotification), userInfo: nil, repeats: false)
+        
+        //optional func userNotificationCenter(_ center: UNUserNotificationCenter,
+        //                                     didReceive response: UNNotificationResponse,
+        //                                     withCompletionHandler completionHandler: @escaping () -> Void)
     }
-    
-    
-    
-    /*func timedNotification(inSeconds: TimeInterval) {
+
+    func timedNotification() {
         
         //Set Trigger and Content for buttons
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         
         let content = UNMutableNotificationContent()
-        content.title = "Please conduct one quiz Freq!"
+        content.title = "Please conduct one quiz!" //for Frequency
         content.badge = 1
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
+        print("Test")
+        
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }*/
+    }
     
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        clockNotification(closure: {
+        timedNotification()
+        
+        //Timer.init(fireAt: <#T##Date#>, interval: <#T##TimeInterval#>, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
+        
+        //Timer.init(timeInterval: 5, target: self, selector: #selector(timedNotification), userInfo: nil, repeats: false)
+        
+        //timedNotification()
+        
+        /*clockNotification(closure: { (error) in
             
             //Notification Frequency
-                
             let content = UNMutableNotificationContent()
             content.title = "Please conduct one quiz Freq!"
             content.badge = 1
@@ -113,7 +128,7 @@ class SecondViewController: UIViewController {
             let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
                 
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        })
+        })*/
     }
 }
 

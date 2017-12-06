@@ -84,19 +84,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicate Notification Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCL-gc-uY4">
-                                <rect key="frame" x="20" y="200" width="335" height="21.5"/>
+                                <rect key="frame" x="20" y="214" width="335" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Notification Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCr-J9-1wV">
-                                <rect key="frame" x="20" y="339.5" width="335" height="21.5"/>
+                                <rect key="frame" x="20" y="353.5" width="335" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P80-es-stQ">
-                                <rect key="frame" x="50" y="229.5" width="275" height="30"/>
+                                <rect key="frame" x="50" y="243.5" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bca-SQ-c6H"/>
                                 </constraints>
@@ -105,14 +105,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-sk-Bto">
-                                <rect key="frame" x="20" y="72" width="335" height="88"/>
+                                <rect key="frame" x="20" y="72" width="335" height="102"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Please indicate below the exact time you would like to be notified by "Study Boss," then set the frequency (how often) you would like to be notified after the initial set time. Please note that you will not be notified at all, unless if you set a desired notification frequency.</string>
+                                <string key="text">Please indicate below the exact time you would like to be notified by "Study Boss." Everyday you will be notified at the time you set. You can also set the frequency (how often) you would like to be notified in a given day. Please note that you will not be notified at all, unless if you set a desired notification time or frequency.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jh9-Hu-Lcu">
-                                <rect key="frame" x="100" y="371" width="175" height="87"/>
+                                <rect key="frame" x="100" y="385" width="175" height="87"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIw-EU-dOR">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="29"/>
