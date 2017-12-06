@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		713AD2311FC2765D005F3AC1 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AD2301FC2765D005F3AC1 /* CardTableViewCell.swift */; };
 		713AD2331FC27984005F3AC1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AD2321FC27984005F3AC1 /* Card.swift */; };
-		717F3DE61FD7681C008D2ED7 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F3DE51FD7681B008D2ED7 /* FlipViewController.swift */; };
+		71CFE8CA1FD76D1F00D02373 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CFE8C91FD76D1F00D02373 /* FlipViewController.swift */; };
 		71E10A501FCA830A00357C0A /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E10A4F1FCA830A00357C0A /* CardTableView.swift */; };
 		73EA79DA1FAC224100D9A352 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79D91FAC224100D9A352 /* Deck.swift */; };
 		73EA79DE1FAC280300D9A352 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA79DD1FAC280300D9A352 /* DeckTableViewController.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		713AD2301FC2765D005F3AC1 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		713AD2321FC27984005F3AC1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		717F3DE51FD7681B008D2ED7 /* FlipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlipViewController.swift; path = ../../../Desktop/StudyBoss/FlipViewController.swift; sourceTree = "<group>"; };
+		71CFE8C91FD76D1F00D02373 /* FlipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = SOURCE_ROOT; };
 		71E10A4F1FCA830A00357C0A /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
 		73EA79D91FAC224100D9A352 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		73EA79DD1FAC280300D9A352 /* DeckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeckTableViewController.swift; path = ../DeckTableViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				713AD2301FC2765D005F3AC1 /* CardTableViewCell.swift */,
 				73EA79D91FAC224100D9A352 /* Deck.swift */,
 				713AD2321FC27984005F3AC1 /* Card.swift */,
-				717F3DE51FD7681B008D2ED7 /* FlipViewController.swift */,
+				71CFE8C91FD76D1F00D02373 /* FlipViewController.swift */,
 				73F9C8C81F7B52050054CDF3 /* SettingsViewController.swift */,
 				73F9C8CA1F7B52050054CDF3 /* Main.storyboard */,
 				73F9C8CD1F7B52050054CDF3 /* Assets.xcassets */,
@@ -226,7 +226,7 @@
 				73EA79E01FAC29B300D9A352 /* DeckTableViewCell.swift in Sources */,
 				73EA79DA1FAC224100D9A352 /* Deck.swift in Sources */,
 				73F9C8C91F7B52050054CDF3 /* SettingsViewController.swift in Sources */,
-				717F3DE61FD7681C008D2ED7 /* FlipViewController.swift in Sources */,
+				71CFE8CA1FD76D1F00D02373 /* FlipViewController.swift in Sources */,
 				73F9C8C51F7B52050054CDF3 /* AppDelegate.swift in Sources */,
 				73F9C8C71F7B52050054CDF3 /* FirstViewController.swift in Sources */,
 				73EA79DE1FAC280300D9A352 /* DeckTableViewController.swift in Sources */,
