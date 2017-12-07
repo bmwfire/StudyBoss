@@ -44,11 +44,6 @@ class FlipViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "ContinueFlip"){
             if let nav_vc = segue.destination as? UINavigationController{
@@ -64,18 +59,8 @@ class FlipViewController: UIViewController {
             }
             
         }
-        /*
-        if let svc = segue.source as? FlipViewController{
-            frontsFlip = svc.frontsFlip
-            backsFlip = svc.backsFlip
-        }
-        if let vc = segue.destination as? FlipViewController {
-            vc.frontsFlip = frontsFlip
-            vc.backsFlip = backsFlip
-            vc.count = count
-        }
-        */
     }
+    
     @IBAction func Next(_ sender: UIBarButtonItem) {
         /*
         let myVC = storyboard?.instantiateViewController(withIdentifier: "flipViewController") as! FlipViewController
@@ -105,14 +90,4 @@ class FlipViewController: UIViewController {
             UIView.transition(with: Button, duration: 0.3, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: nil, completion: nil)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

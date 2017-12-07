@@ -63,7 +63,7 @@ class SecondViewController: UIViewController {
         clockNotification()
     }
     
-    //MARK: Clock Notification Function
+    //MARK: TIME Notification Functions
     func clockNotification() {
         //Extracting time from UIDatePicker and setting Date Components
         let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
@@ -81,18 +81,12 @@ class SecondViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "clockTime", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-        //Timer.init(fireAt: datePicker.date, interval: 1, target: self, selector: #selector(timedNotification), userInfo: nil, repeats: false)
-        
-        //optional func userNotificationCenter(_ center: UNUserNotificationCenter,
-        //                                     didReceive response: UNNotificationResponse,
-        //                                     withCompletionHandler completionHandler: @escaping () -> Void)
     }
 
-    func timedNotification() {
+    func timedNotification(inSeconds: TimeInterval) {
         
         //Set Trigger and Content for buttons
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
         
         let content = UNMutableNotificationContent()
         content.title = "Please conduct one quiz!" //for Frequency
@@ -108,27 +102,20 @@ class SecondViewController: UIViewController {
     //MARK: Button Toggle
     @IBAction func thirtyMin(_ sender: UIButton) {
         
-        timedNotification()
+        //Call Time Frequency
+        timedNotification(inSeconds: (30*60))
+    }
+    
+    @IBAction func fourtyFiveMin(_ sender: UIButton) {
         
-        //Timer.init(fireAt: <#T##Date#>, interval: <#T##TimeInterval#>, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
+        //Call Time Frequency
+        timedNotification(inSeconds: (45*60))
+    }
+    
+    @IBAction func sixtyMin(_ sender: UIButton) {
         
-        //Timer.init(timeInterval: 5, target: self, selector: #selector(timedNotification), userInfo: nil, repeats: false)
-        
-        //timedNotification()
-        
-        /*clockNotification(closure: { (error) in
-            
-            //Notification Frequency
-            let content = UNMutableNotificationContent()
-            content.title = "Please conduct one quiz Freq!"
-            content.badge = 1
-            
-            //Set Trigger and Content for buttons
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-            let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
-                
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        })*/
+        //Call Time Frequency
+        timedNotification(inSeconds: (60*60))
     }
 }
 
