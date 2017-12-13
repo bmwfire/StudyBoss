@@ -127,7 +127,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="45 minutes"/>
                                         <connections>
-                                            <action selector="fourtyFiveMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="cGO-bv-m6L"/>
+                                            <action selector="fortyFiveMin:" destination="t9r-8x-0bc" eventType="touchUpInside" id="PaG-Z9-enm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-gx-6fp">

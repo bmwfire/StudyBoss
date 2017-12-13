@@ -94,8 +94,6 @@ class SecondViewController: UIViewController {
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
-        print("Test")
-        
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
@@ -106,7 +104,7 @@ class SecondViewController: UIViewController {
         timedNotification(inSeconds: (30*60))
     }
     
-    @IBAction func fourtyFiveMin(_ sender: UIButton) {
+    @IBAction func fortyFiveMin(_ sender: UIButton) {
         
         //Call Time Frequency
         timedNotification(inSeconds: (45*60))
